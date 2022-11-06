@@ -1,5 +1,4 @@
-ansible-role-harden-linux
-=========================
+# ansible-role-harden-linux
 
 This Ansible role was mainly created for my blog series [Kubernetes the not so hard way with Ansible - Harden the instances](https://www.tauceti.blog/posts/kubernetes-the-not-so-hard-way-with-ansible-harden-the-instances/). But it can be used also standalone of course to harden Linux. It has the following features:
 
@@ -12,18 +11,15 @@ This Ansible role was mainly created for my blog series [Kubernetes the not so h
 - Install sshguard and adjust whitelist
 - Optional: Install/configure Network Time Synchronization (NTP) e.g. `openntpd`/`ntp`/`systemd-timesyncd`
 
-Versions
---------
+## Versions
 
 I tag every release and try to stay with [semantic versioning](http://semver.org). If you want to use the role I recommend to checkout the latest tag. The master branch is basically development while the tags mark stable releases. But in general I try to keep master in good shape too.
 
-Changelog
----------
+## Changelog
 
 see [CHANGELOG.md](https://github.com/githubixx/ansible-role-harden-linux/blob/master/CHANGELOG.md)
 
-Role Variables
---------------
+## Role Variables
 
 The following variables don't have defaults. You need to specify them either in a file in `group_vars` or `host_vars` directory. E.g. if this settings should be used only for one specific host create a file for that host called like the FQDN of that host (e.g `host_vars/your-server.example.tld`) and put the variables with the correct values there. If you want to apply this variables to a host group create a file `group_vars/your-group.yml` e.g. Replace `your-group` with the host group name which you created in the Ansible `hosts` file (do not confuse with /etc/hosts...). `harden_linux_deploy_user_public_keys` loads all the public SSH key files specified in the list from your local hard disk. So at least you need to specify:
 
@@ -268,8 +264,7 @@ For Archlinux:
 harden_linux_archlinux_update_cache: true
 ```
 
-Example Playbook
-----------------
+## Example Playbook
 
 If you installed the role via `ansible-galaxy install githubixx.harden-linux` then include the role into your playbook like in this example:
 
@@ -279,12 +274,10 @@ If you installed the role via `ansible-galaxy install githubixx.harden-linux` th
     - githubixx.harden-linux
 ```
 
-License
--------
+## License
 
 GNU GENERAL PUBLIC LICENSE Version 3
 
-Author Information
-------------------
+## Author Information
 
 [www.tauceti.blog](https://www.tauceti.blog)

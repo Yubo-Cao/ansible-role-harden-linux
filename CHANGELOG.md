@@ -1,5 +1,4 @@
-Changelog
----------
+## Changelog
 
 **v6.2.0**
 
